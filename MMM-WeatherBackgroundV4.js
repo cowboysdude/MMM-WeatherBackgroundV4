@@ -13,6 +13,8 @@ Module.register("MMM-WeatherBackgroundV4", {
 		opacity: 0.3,                     // darkness of the box behind each module (0 = none, 1 = black)
 		modulePadding: "10px",            // padding inside those boxes
 		moduleBackground: true,           // false = don't put a dark box behind modules
+		noBox: ["MMM-NOAAV4"],            // modules that get no dark box (they draw their own card)
+		fitBoxes: true,                   // true = each box hugs its module | false = box fills the module's whole slot
 		fadeSpeed: 2,                     // seconds for the photo to fade to the next one
 		images: {}                        // your own pictures, e.g. { "rain": "my-rain.jpg", "n_rain": "my-night-rain.jpg" }
 	},
@@ -124,10 +126,23 @@ Module.register("MMM-WeatherBackgroundV4", {
 	applyModuleBoxes () {
 		if (!this.config.moduleBackground) return;
 		const style = document.createElement("style");
-		style.textContent = `.module:not(.MMM-WeatherBackgroundV4) {
+		const skip = ["MMM-WeatherBackgroundV4", ...(this.config.noBox || [])]
+			.map((n) => `:not(.${String(n).replace(/[^\w-]/g, "")})`).join("");
+		const box = `.module${skip}`;
+		let css = `${box} {
 			background-color: rgba(0, 0, 0, ${Number(this.config.opacity)});
 			padding: ${this.config.modulePadding};
 		}`;
+		if (this.config.fitBoxes) {
+			// shrink each box to its module, keeping it on its side of the screen;
+			// the full-width bars (like a news ticker) keep their full width
+			css += `
+			${box} { box-sizing: border-box; width: fit-content; max-width: 100%; }
+			.region.right ${box} { margin-left: auto; }
+			.region.center ${box}, .region.third ${box} { margin-left: auto; margin-right: auto; }
+			.region.bar ${box} { width: auto; }`;
+		}
+		style.textContent = css;
 		document.head.appendChild(style);
 	},
 
