@@ -1,0 +1,6 @@
+/* MMM-WeatherBackgroundV4: the photo fills the screen behind every module */
+.weather-background {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}

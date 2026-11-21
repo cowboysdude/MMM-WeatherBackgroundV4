@@ -1,16 +1,9 @@
 {
-  "name": "mmm-weatherbackground",
-  "version": "3.0.1",
-  "description": "MagicMirror Module - for Weather image background from Unsplash. This is a plugin of other weather modules.",
-  "main": "MMM-WeatherBackground.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "name": "mmm-weatherbackgroundv4",
+  "version": "4.0.0",
+  "description": "MagicMirror² module that shows a sharp full-screen photo matching the current weather, day or night. Works with MMM-NOAAV4.",
+  "main": "MMM-WeatherBackgroundV4.js",
+  "author": "cowboysdude",
   "license": "MIT",
-  "dependencies": {
-    "dayjs": "^1.7.7",
-    "request": "^2.88.0"
-  },
-  "devDependencies": {}
+  "keywords": ["MagicMirror", "weather", "background", "NOAAV4"]
 }
