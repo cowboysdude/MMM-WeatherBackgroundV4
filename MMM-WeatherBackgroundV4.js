@@ -13,7 +13,7 @@ Module.register("MMM-WeatherBackgroundV4", {
 		opacity: 0.3,                     // darkness of the box behind each module (0 = none, 1 = black)
 		modulePadding: "10px",            // padding inside those boxes
 		moduleBackground: true,           // false = don't put a dark box behind modules
-		noBox: ["MMM-NOAAV4"],            // modules that get no dark box (they draw their own card)
+		noBox: ["MMM-NOAAV4", "MMM-NEO"], // modules that get no dark box (they draw their own card)
 		fitBoxes: true,                   // true = each box hugs its module | false = box fills the module's whole slot
 		fadeSpeed: 2,                     // seconds for the photo to fade to the next one
 		images: {}                        // your own pictures, e.g. { "rain": "my-rain.jpg", "n_rain": "my-night-rain.jpg" }

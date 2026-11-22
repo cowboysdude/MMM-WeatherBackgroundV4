@@ -60,7 +60,7 @@ to see it. The photo appears as soon as MMM-NOAAV4 loads the weather.
 | `moduleBackground` | `true` | Set to `false` to turn the dark boxes off completely. |
 | `modulePadding` | `"10px"` | Space inside the dark boxes. |
 | `fitBoxes` | `true` | Each dark box hugs its module instead of filling the module's whole slot. Full-width bars (like a news ticker) stay full width. `false` = the old full-slot boxes. |
-| `noBox` | `["MMM-NOAAV4"]` | Modules that get no dark box, because they draw their own card. Add more names, e.g. `["MMM-NOAAV4", "clock"]`. |
+| `noBox` | `["MMM-NOAAV4", "MMM-NEO"]` | Modules that get no dark box, because they draw their own card. Add more names, e.g. `["MMM-NOAAV4", "clock"]`. |
 | `fadeSpeed` | `2` | Seconds the photo takes to fade to the next one. |
 | `images` | `{}` | Use your own photos (see below). |
 | `notification` | `"WEATHER"` | The message MMM-NOAAV4 sends. Leave it alone unless you know you need to change it. |
